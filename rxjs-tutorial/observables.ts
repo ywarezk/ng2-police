@@ -1,6 +1,6 @@
 
-import {Observer, Subscription} from 'rxjs';
-import {Observable} from 'rxjs';
+import {Observer, Subscription, BehaviorSubject} from 'rxjs';
+import {Observable, Subject} from 'rxjs';
 
 // observer has the following methods
 // next - jumps on every pulse
@@ -57,4 +57,30 @@ counterObservable.subscribe((counter: number) => {
 });
 
 // observables duplicates with every listener
+
+// subject
+
+const counterSubject: Subject<number> = new Subject();
+
+counterSubject.next(0);
+counterSubject.next(1);
+counterSubject.next(2);
+
+counterSubject.subscribe((counter: number) => {
+    console.log(`the subject number is: ${counter}`);
+});
+
+counterSubject.next(3);
+
+const counterBehaviourSubject: BehaviorSubject<number> = new BehaviorSubject(0);
+// counterBehaviourSubject.next(0);
+counterBehaviourSubject.next(1);
+counterBehaviourSubject.next(2);
+
+counterBehaviourSubject.subscribe((counter: number) => {
+    console.log(`behavior subject: ${counter}`);
+})
+
+counterBehaviourSubject.next(3);
+
 
