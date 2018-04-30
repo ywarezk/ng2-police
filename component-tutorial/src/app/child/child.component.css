@@ -1,0 +1,22 @@
+
+
+p{
+    color: red;
+}
+
+.child-component p {
+    
+}
+
+/* .child-component {
+
+    p {
+
+    }
+
+} */
+
+/* :host {
+    display: block;
+    border: 1px solid black;
+} */
