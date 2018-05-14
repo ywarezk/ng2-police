@@ -1,3 +1,10 @@
 <p>
-  todo-item works!
+    {{(task$ | async)?.title}}
 </p>
+<p>
+    {{(task$ | async)?.description}}
+</p>
+<p>
+    {{(task$ | async)?.id}}
+</p>
+      

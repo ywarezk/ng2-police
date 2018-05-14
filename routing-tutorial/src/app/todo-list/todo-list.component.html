@@ -6,6 +6,8 @@
 
 <ul>
     <li *ngFor="let task of tasks">
-        {{task.title}}
+        <a [routerLink]="'/todos/' + task.id">
+            {{task.title}}
+        </a>
     </li>
 </ul>
